@@ -1,10 +1,11 @@
 import request from '@/utils/request'
+import config from '@/config/index'
 
 // 登录
 const service = {
     login(data) {
         return request({
-            url: '/login',
+            url: config.baseURL + '/login',
             method: 'post',
             data
         })
@@ -12,7 +13,7 @@ const service = {
     // 获取用户信息
     getUserInfo() {
         return request({
-            url: '/userinfo',
+            url: config.baseURL + '/userinfo',
             method: 'get'
         })
     }
