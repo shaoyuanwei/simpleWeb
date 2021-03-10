@@ -4,6 +4,7 @@ import config from '@/config/index'
 // 登录
 const service = {
     login(data) {
+        console.log(data);
         return request({
             url: config.baseURL + '/login',
             method: 'post',

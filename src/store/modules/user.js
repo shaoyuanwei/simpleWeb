@@ -16,11 +16,13 @@ const user = {
         Login( { commit }, userInfo) {
             return new Promise((resolve, reject) => {
                 api.login(userInfo).then(res => {
+                    console.log(res);
                     if (res.code === 200) {
                         setToken(res.data)
                         commit('SET_TOKEN', res.data)
+                        this.$router.push("/")
                     }
-                    resolve()
+                    resolve(res)
                 }).catch(err => {
                     reject(err)
                 })
